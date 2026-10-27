@@ -8,7 +8,9 @@ Control a compatible Android TV box from a phone, tablet or computer browser. Th
 
 ### Install without a USB drive
 
-**Open [the installation page](https://nalivnoy.github.io/x96-pult-updates/) in the browser on the TV box**, then choose **Download APK**. The button always downloads the latest stable version.
+Short address to type on the TV: **[nalivnoy.github.io/x96](https://nalivnoy.github.io/x96/)**
+
+**Open [the installation page](https://nalivnoy.github.io/x96/) in the browser on the TV box**, then choose **Download APK**. The button always downloads the latest stable version.
 
 [Download the latest APK directly](https://github.com/Nalivnoy/x96-pult-updates/releases/latest/download/X96-Pult.apk) · [All releases and installation archive](https://github.com/Nalivnoy/x96-pult-updates/releases/latest)
 
@@ -57,7 +59,9 @@ Third-party components: [scrcpy 5.0.1](https://github.com/Genymobile/scrcpy/tree
 
 ### Установка без флешки
 
-**Откройте [страницу установки](https://nalivnoy.github.io/x96-pult-updates/) в браузере самой приставки** и нажмите **«Скачать APK»**. Кнопка всегда скачивает последнюю стабильную версию.
+Короткий адрес для ввода на телевизоре: **[nalivnoy.github.io/x96](https://nalivnoy.github.io/x96/)**
+
+**Откройте [страницу установки](https://nalivnoy.github.io/x96/) в браузере самой приставки** и нажмите **«Скачать APK»**. Кнопка всегда скачивает последнюю стабильную версию.
 
 [Скачать последний APK напрямую](https://github.com/Nalivnoy/x96-pult-updates/releases/latest/download/X96-Pult.apk) · [Все выпуски и установочный архив](https://github.com/Nalivnoy/x96-pult-updates/releases/latest)
 
