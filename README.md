@@ -4,7 +4,7 @@
 
 ## English
 
-Control a compatible Android TV box from a phone, tablet or computer browser. The remote runs on the TV box and works inside your home network. Internet is only needed to download the app and check for updates.
+Control a compatible Android TV box from a phone, tablet or computer browser. The remote runs on the TV box and works inside your home network. Internet is needed for downloads, updates and optional remote assistance. Ordinary home-network control works locally.
 
 ### Install without a USB drive
 
@@ -33,6 +33,19 @@ The app also checks when its TV window opens, with a six-hour interval after a s
 
 **Keep the installed app: install updates over it, without uninstalling.** Your pairing code, connected browsers and settings are preserved. If your old version has no Updates button, install the latest APK using the installation page once; subsequent updates work from the TV app. The same page can also update an existing installation manually.
 
+### Remote assistance over the internet · version 1.6.0
+
+1. On the TV, open **Удалённая помощь** (Remote assistance). On first use, allow the visible indicator over other apps, then return and choose **Создать сеанс** (Create session).
+2. Tell your trusted helper the 16-character session code. The helper opens **[nalivnoy.github.io/x96/help](https://nalivnoy.github.io/x96/help/)** on a phone, tablet or computer, enters the code and their name.
+3. On the TV, check the name and choose **Разрешить подключение** (Allow connection). Until you confirm, the helper gets neither the screen nor control.
+4. The helper can view the screen (approximately one JPEG image per second), use remote buttons, enter text and launch apps. Audio stays on the TV. The TV shows an indicator with **Завершить** (End); either side can end the session.
+
+Each session lasts at most 30 minutes, allows one helper, and requires fresh TV consent. Lost communication ends access; sessions do not resume automatically or start on boot. The code is separate from your home-network pairing PIN. Give it only to the person you want to help you.
+
+The relay runs as a separate service on the project's existing server. Other users need no server account, always-on PC at home, port forwarding or subscription. The TV initiates the connection over HTTPS/WSS; it can work with ByeByeDPI running. If using a VPN, keep local-network access enabled. Internet connectivity to the relay is required on both devices.
+
+Frames and commands use AES-GCM encryption between the TV and browser. The relay keeps authentication hashes, expiry and a temporary closed-session marker in memory, not screen images or commands. The code and encryption keys are kept only for the session. Server restart ends current sessions. Hosting uses existing server resources; no new paid service was added. Availability depends on that server, its network and the free DNS service. Cloudflare was tested but is not used for the released relay because direct connections from the tested ISP stalled.
+
 ### Compatibility and access
 
 - Android **8.0 or newer**. Fully tested on **X96Q, slimBOXtv ATV 10.11 / Android 10**. Other devices and firmware need their own compatibility check.
@@ -49,13 +62,13 @@ Remote buttons, a touchpad without video, text input, app launching with favorit
 
 This repository hosts release APKs, installation archives, the update feed, this guide and the installation page. APK download size, SHA-256, package, version and signing certificate are checked before an in-app update. Build keys, personal settings and pairing codes are not published.
 
-Third-party components: [scrcpy 5.0.1](https://github.com/Genymobile/scrcpy/tree/v5.0.1) and [ZXing Core 3.5.4](https://github.com/zxing/zxing/releases/tag/zxing-3.5.4), Apache License 2.0. Their licenses are included in the APK and the installation archive.
+Third-party components: [scrcpy 5.0.1](https://github.com/Genymobile/scrcpy/tree/v5.0.1) and [ZXing Core 3.5.4](https://github.com/zxing/zxing/releases/tag/zxing-3.5.4), Apache License 2.0. OkHttp 4.12.0, Okio 3.6.0 and Kotlin standard library 1.9.10 are also included under Apache License 2.0. Their licenses are included in the APK and the installation archive.
 
 ---
 
 ## Русский
 
-Управление совместимой Android-приставкой из браузера телефона, планшета или компьютера. Пульт работает на самой приставке внутри домашней сети. Интернет нужен для скачивания приложения и проверки обновлений.
+Управление совместимой Android-приставкой из браузера телефона, планшета или компьютера. Пульт работает на самой приставке внутри домашней сети. Интернет нужен для скачивания, обновлений и удалённой помощи по запросу. Обычный домашний пульт работает локально.
 
 ### Установка без флешки
 
@@ -84,6 +97,19 @@ APK устанавливается **на приставку**. На телеф�
 
 **Устанавливайте обновления поверх прежней версии, не удаляя приложение.** Код, привязанные браузеры и настройки сохранятся. Если в старой версии нет кнопки «Обновления», один раз установите последний APK со страницы установки. Следующие версии будут доступны в самом приложении. Этой же страницей можно пользоваться для ручного обновления уже установленного пульта.
 
+### Удалённая помощь через интернет · версия 1.6.0
+
+1. На телевизоре откройте **«Удалённая помощь»**. В первый раз разрешите показ индикатора поверх приложений, вернитесь назад и нажмите **«Создать сеанс»**.
+2. Назовите доверенному помощнику код из 16 символов. Помощник открывает **[nalivnoy.github.io/x96/help](https://nalivnoy.github.io/x96/help/)** на телефоне, планшете или компьютере, вводит код и своё имя.
+3. На телевизоре проверьте имя и нажмите **«Разрешить подключение»**. До подтверждения экран и управление недоступны.
+4. Помощник видит экран (примерно один снимок JPEG в секунду), нажимает кнопки пульта, вводит текст и запускает приложения. Звук остаётся на телевизоре. На телевизоре виден индикатор с кнопкой **«Завершить»**; отключиться можно с любой стороны.
+
+Один сеанс — один помощник, до 30 минут, с новым подтверждением на телевизоре. При потере связи доступ завершается. После перезагрузки или обрыва помощь сама не возобновляется. Это отдельный код, не PIN домашнего пульта. Сообщайте его только человеку, которому хотите дать доступ.
+
+Сервер связи работает отдельным сервисом на уже имеющемся сервере проекта. Другим владельцам не нужны аккаунт сервера, постоянно включённый домашний компьютер, проброс портов или подписка. Приставка сама подключается по HTTPS/WSS; можно пользоваться с включённым ByeByeDPI. Если используете VPN, сохраните доступ к домашней сети. Интернет с доступом к серверу помощи нужен на обоих устройствах.
+
+Кадры и команды зашифрованы AES-GCM между приставкой и браузером. Сервер держит в памяти хеши для проверки доступа, время завершения и временную отметку закрытого сеанса; изображения и команды не сохраняются. Код и ключи шифрования существуют только на время сеанса. Перезапуск сервера завершает текущие сеансы. Новых платных услуг не подключали: используются ресурсы существующего сервера. Доступность зависит от его работы, сети и бесплатного DNS-сервиса. Cloudflare проверен, но в выпущенном варианте не используется: прямое соединение через проверенного провайдера зависало.
+
 ### Совместимость и доступ
 
 - Android **8.0 или новее**. Полностью проверена **X96Q со slimBOXtv ATV 10.11 / Android 10**. Другие модели и прошивки требуют отдельной проверки.
@@ -100,4 +126,4 @@ APK устанавливается **на приставку**. На телеф�
 
 Репозиторий содержит готовые APK, установочные архивы, сведения об обновлении, эту инструкцию и страницу установки. Перед обновлением приложение проверяет размер APK, SHA-256, пакет, версию и подпись. Ключи сборки, личные настройки и коды привязки не публикуются.
 
-Сторонние компоненты: [scrcpy 5.0.1](https://github.com/Genymobile/scrcpy/tree/v5.0.1) и [ZXing Core 3.5.4](https://github.com/zxing/zxing/releases/tag/zxing-3.5.4), Apache License 2.0. Лицензии включены в APK и установочный архив.
+Сторонние компоненты: [scrcpy 5.0.1](https://github.com/Genymobile/scrcpy/tree/v5.0.1) и [ZXing Core 3.5.4](https://github.com/zxing/zxing/releases/tag/zxing-3.5.4), Apache License 2.0. Также используются OkHttp 4.12.0, Okio 3.6.0 и стандартная библиотека Kotlin 1.9.10 (Apache License 2.0). Лицензии включены в APK и установочный архив.
