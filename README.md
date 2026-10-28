@@ -40,7 +40,7 @@ The app also checks when its TV window opens, with a six-hour interval after a s
 3. On the TV, check the name and choose **Разрешить подключение** (Allow connection). Until you confirm, the helper gets neither the screen nor control.
 4. From version **1.7.0**, the helper gets smooth H.264 video (up to 15 fps), remote buttons, text input and app launching. Use the **Экран** (Screen) selector to choose **Плавное видео** (Smooth video) or **Снимки** (Snapshots). Older browsers and encoder/network failures fall back to snapshots. Version 1.6.0 TV apps continue to work in snapshot mode. Audio stays on the TV. The TV shows an indicator with **Завершить** (End); either side can end the session.
 
-Smooth video uses more data; choose Snapshots on a slow connection. Only one video channel can be active on the TV box: if the home remote is already streaming, internet help uses snapshots.
+Smooth video uses more data; choose Snapshots on a slow connection. Only one video channel can be active on the TV box: if the home remote is already streaming, internet help initially uses snapshots. From version 1.8.1, **Переключить видео сюда** (Switch video here) explicitly stops the other screen stream and starts remote video. TV playback continues.
 
 Each session lasts at most 30 minutes, allows one helper, and requires fresh TV consent. Lost communication ends access; sessions do not resume automatically or start on boot. Use the code from Remote assistance, not the home-network pairing PIN on the main TV screen. TV apps older than 1.8.0 still show 16 characters; select **У меня старый код из 16 символов** on the helper page for those apps. Give it only to the person you want to help you.
 
@@ -106,7 +106,7 @@ APK устанавливается **на приставку**. На телеф�
 3. На телевизоре проверьте имя и нажмите **«Разрешить подключение»**. До подтверждения экран и управление недоступны.
 4. Начиная с версии **1.7.0**, помощник видит плавное видео H.264 (до 15 кадров/с), нажимает кнопки пульта, вводит текст и запускает приложения. В списке **«Экран»** доступны **«Плавное видео»** и **«Снимки»**. В старом браузере или при проблеме с кодировщиком/сетью включаются снимки. Приставки с версией 1.6.0 продолжают работать в режиме снимков. Звук остаётся на телевизоре. На телевизоре виден индикатор с кнопкой **«Завершить»**; отключиться можно с любой стороны.
 
-Видео расходует больше трафика: при медленной сети выберите «Снимки». На приставке доступен один видеоканал: если экран уже открыт в домашнем пульте, удалённая помощь использует снимки.
+Видео расходует больше трафика: при медленной сети выберите «Снимки». На приставке доступен один видеоканал: если экран уже открыт в домашнем пульте, удалённая помощь сначала использует снимки. С версии 1.8.1 кнопка **«Переключить видео сюда»** останавливает другую трансляцию экрана и запускает удалённое видео. Воспроизведение на телевизоре продолжается.
 
 Один сеанс — один помощник, до 30 минут, с новым подтверждением на телевизоре. При потере связи доступ завершается. После перезагрузки или обрыва помощь сама не возобновляется. Нужен код из раздела «Удалённая помощь», а не код привязки с главного экрана домашнего пульта. Если на старой версии приставки показаны 16 символов, на странице помощника нажмите «У меня старый код из 16 символов». Сообщайте его только человеку, которому хотите дать доступ.
 
