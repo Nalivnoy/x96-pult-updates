@@ -33,12 +33,14 @@ The app also checks when its TV window opens, with a six-hour interval after a s
 
 **Keep the installed app: install updates over it, without uninstalling.** Your pairing code, connected browsers and settings are preserved. If your old version has no Updates button, install the latest APK using the installation page once; subsequent updates work from the TV app. The same page can also update an existing installation manually.
 
-### Remote assistance over the internet · version 1.6.0
+### Remote assistance over the internet
 
 1. On the TV, open **Удалённая помощь** (Remote assistance). On first use, allow the visible indicator over other apps, then return and choose **Создать сеанс** (Create session).
 2. Tell your trusted helper the 16-character session code. The helper opens **[nalivnoy.github.io/x96/help](https://nalivnoy.github.io/x96/help/)** on a phone, tablet or computer, enters the code and their name.
 3. On the TV, check the name and choose **Разрешить подключение** (Allow connection). Until you confirm, the helper gets neither the screen nor control.
-4. The helper can view the screen (approximately one JPEG image per second), use remote buttons, enter text and launch apps. Audio stays on the TV. The TV shows an indicator with **Завершить** (End); either side can end the session.
+4. From version **1.7.0**, the helper gets smooth H.264 video (up to 15 fps), remote buttons, text input and app launching. Use the **Экран** (Screen) selector to choose **Плавное видео** (Smooth video) or **Снимки** (Snapshots). Older browsers and encoder/network failures fall back to snapshots. Version 1.6.0 TV apps continue to work in snapshot mode. Audio stays on the TV. The TV shows an indicator with **Завершить** (End); either side can end the session.
+
+Smooth video uses more data; choose Snapshots on a slow connection. Only one video channel can be active on the TV box: if the home remote is already streaming, internet help uses snapshots.
 
 Each session lasts at most 30 minutes, allows one helper, and requires fresh TV consent. Lost communication ends access; sessions do not resume automatically or start on boot. The code is separate from your home-network pairing PIN. Give it only to the person you want to help you.
 
@@ -97,12 +99,14 @@ APK устанавливается **на приставку**. На телеф�
 
 **Устанавливайте обновления поверх прежней версии, не удаляя приложение.** Код, привязанные браузеры и настройки сохранятся. Если в старой версии нет кнопки «Обновления», один раз установите последний APK со страницы установки. Следующие версии будут доступны в самом приложении. Этой же страницей можно пользоваться для ручного обновления уже установленного пульта.
 
-### Удалённая помощь через интернет · версия 1.6.0
+### Удалённая помощь через интернет
 
 1. На телевизоре откройте **«Удалённая помощь»**. В первый раз разрешите показ индикатора поверх приложений, вернитесь назад и нажмите **«Создать сеанс»**.
 2. Назовите доверенному помощнику код из 16 символов. Помощник открывает **[nalivnoy.github.io/x96/help](https://nalivnoy.github.io/x96/help/)** на телефоне, планшете или компьютере, вводит код и своё имя.
 3. На телевизоре проверьте имя и нажмите **«Разрешить подключение»**. До подтверждения экран и управление недоступны.
-4. Помощник видит экран (примерно один снимок JPEG в секунду), нажимает кнопки пульта, вводит текст и запускает приложения. Звук остаётся на телевизоре. На телевизоре виден индикатор с кнопкой **«Завершить»**; отключиться можно с любой стороны.
+4. Начиная с версии **1.7.0**, помощник видит плавное видео H.264 (до 15 кадров/с), нажимает кнопки пульта, вводит текст и запускает приложения. В списке **«Экран»** доступны **«Плавное видео»** и **«Снимки»**. В старом браузере или при проблеме с кодировщиком/сетью включаются снимки. Приставки с версией 1.6.0 продолжают работать в режиме снимков. Звук остаётся на телевизоре. На телевизоре виден индикатор с кнопкой **«Завершить»**; отключиться можно с любой стороны.
+
+Видео расходует больше трафика: при медленной сети выберите «Снимки». На приставке доступен один видеоканал: если экран уже открыт в домашнем пульте, удалённая помощь использует снимки.
 
 Один сеанс — один помощник, до 30 минут, с новым подтверждением на телевизоре. При потере связи доступ завершается. После перезагрузки или обрыва помощь сама не возобновляется. Это отдельный код, не PIN домашнего пульта. Сообщайте его только человеку, которому хотите дать доступ.
 
